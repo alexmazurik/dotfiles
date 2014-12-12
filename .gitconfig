@@ -1,0 +1,20 @@
+[user]
+    name = Alexander Mazurik
+    email = almaz@yandex-team.ru
+
+[core]
+    editor = vim
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
