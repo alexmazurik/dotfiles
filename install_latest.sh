@@ -1,8 +1,7 @@
-#!/bin/sh -e
+#!/bin/sh -eu
 
-cd $HOME
+cd
 
-echo Get latest version
 if type git >/dev/null 2>&1; then
     echo git available
     if [ ! -d .dotfiles ]; then
@@ -19,9 +18,6 @@ else
     DOTFILES=$(find . -type f ! -name "*sh" | grep -o ".[a-z].*")
 fi
 
-echo $DOTFILES
-
-echo Make symlinks on dotfiles
 for f in $DOTFILES; do
     [ -f "$f" ] || continue
     link=$HOME/"$f"
