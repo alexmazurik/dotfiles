@@ -1,6 +1,8 @@
 #!/bin/sh -eu
 
-HOST=$1
-echo Occupying $HOST
+HOSTS=$*
 
-ssh $HOST "curl https://raw.githubusercontent.com/alexmazurik/dotfiles/master/install_latest.sh | sh"
+for host in $HOSTS; do
+    echo Occupying $host
+    ssh $host "curl https://raw.githubusercontent.com/alexmazurik/dotfiles/master/install_latest.sh | sh"
+done
