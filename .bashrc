@@ -127,8 +127,11 @@ function go() {
 }
 
 function scppath() {
-    for path in `realpath $1`
+    for path in "$@"
     do
+        if [ ${path:0:1} != "/" ] ; then
+            path=$(pwd)/${path}
+        fi
         echo $(hostname):${path}
     done
 }
