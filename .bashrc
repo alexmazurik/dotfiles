@@ -127,12 +127,9 @@ function go() {
 }
 
 function scppath() {
-    for hostname in `hostinfo` 
+    for path in `realpath $1`
     do
-        for path in `realpath $1`
-        do
-            echo ${hostname}:${path}
-        done
+        echo $(hostname):${path}
     done
 }
 
