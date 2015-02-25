@@ -24,4 +24,3 @@ for f in $DOTFILES; do
     rm -f "$link"
     ln -sfv $(readlink -m $f) "$link" || true
 done
-mv /home/almaz/.dotfiles/.ssh/authorized_keys /home/almaz/.ssh/authorized_keys
