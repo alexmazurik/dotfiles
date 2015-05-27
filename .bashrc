@@ -10,9 +10,7 @@
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
-HISTCONTROL=ignoredups:ignorespace
-
-# append to the history file, don't overwrite it
+HISTCONTROL=ignoredups:ignorespace # append to the history file, don't overwrite it
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
@@ -123,6 +121,10 @@ export DEBFULLNAME="Alexander Mazurik"
 #PS1="\[\033[0;31m\]\u\[\033[0;32m\]@\[\033[0;33m\]\h:\[\033[0;35m\]\w$ \[\033[0m\]\[\033[0m\]"
 function swap() {
     mv "$1" some_unused_name && mv "$2" "$1" &&  mv some_unused_name "$2"
+}
+
+function mkcd() {
+    mkdir $1 && cd $1
 }
 
 function go() {
