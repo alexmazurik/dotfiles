@@ -160,6 +160,10 @@ function om() {
     done
 }
 
+function hb() {
+    ar p $1 2>/dev/null | tar -zxOf- ./sanebuild_cmdline
+}
+
 function dep() {
     PACKAGE=$1
     debtree $PACKAGE | dot -Tpng -o /home/almaz/debtree/$PACKAGE.png
