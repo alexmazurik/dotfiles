@@ -161,7 +161,7 @@ function om() {
 }
 
 function hb() {
-    ar p $1 2>/dev/null | tar -zxOf- ./sanebuild_cmdline
+    ar p $1 _build.tar.gz 2>/dev/null | tar -zxOf- ./sanebuild_cmdline
 }
 
 function dep() {
