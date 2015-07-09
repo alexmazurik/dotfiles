@@ -164,6 +164,10 @@ function hb() {
     ar p $1 _build.tar.gz 2>/dev/null | tar -zxOf- ./sanebuild_cmdline
 }
 
+function hbv() {
+    ar p $1 _build.tar.gz 2>/dev/null | tar -xzOf- ./pkgs_used | less
+}
+
 function dep() {
     PACKAGE=$1
     debtree $PACKAGE | dot -Tpng -o /home/almaz/debtree/$PACKAGE.png
